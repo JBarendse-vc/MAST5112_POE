@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable, Image } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Image, ScrollView } from 'react-native';
 
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.rowDisplay}>
         <Text style={styles.txtHead}>Special</Text>
         <Pressable style={styles.customButton} onPress={() => alert('Specials Page!')}>
@@ -12,32 +12,32 @@ export default function App() {
         </Pressable>
       </View>
       <View style={styles.rowDisplay}>
-        <Image style={styles.previewImg} source={require('assets/images/special.jpg')} />
-        <Image style={styles.previewImg} source={require('assets/images/special.jpg')} />
-        <Image style={styles.previewImg} source={require('assets/images/special.jpg')} />
+        <Image style={styles.previewImg} source={require('./assets/images/special.jpg')} />
+        <Image style={styles.previewImg} source={require('./assets/images/special.jpg')} />
+        <Image style={styles.previewImg} source={require('./assets/images/special.jpg')} />
       </View>
       <View style={styles.rowDisplay}>
         <View style={styles.displayColumn}>
           <Text>Beverages</Text>
-          <Image source={require('assets/images/special.jpg')}  />
+          <Image style={styles.menuImg} source={require('./assets/images/special.jpg')}  />
         </View>
         <View style={styles.displayColumn}>
           <Text>Starter Menu</Text>
-          <Image source={require('assets/images/special.jpg')}  />
+          <Image style={styles.menuImg} source={require('./assets/images/special.jpg')}  />
         </View>
       </View>
       <View style={styles.rowDisplay}>
         <View>
           <Text>Main Menu</Text>
-          <Image source={require('assets/images/special.jpg')}  />
+          <Image style={styles.menuImg} source={require('./assets/images/special.jpg')}  />
         </View>
         <View>
           <Text>Dessert</Text>
-          <Image source={require('assets/images/special.jpg')}  />
+          <Image style={styles.menuImg} source={require('./assets/images/special.jpg')}  />
         </View>
       </View>
       <StatusBar style="auto" />
-    </View>
+    </ScrollView>
   );
 }
 
@@ -55,12 +55,18 @@ const styles = StyleSheet.create({
   },
 
   txtHead: {
-    fontSize: 33,
+    fontSize: 28,
   },
 
   previewImg:{
     width: 110,
     height: 106,
+  },
+
+  menuImg: {
+    width: 151,
+    height: 121,
+    borderRadius: 11,
   },
 
   customButton: {
