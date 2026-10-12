@@ -1,38 +1,39 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Image } from 'react-native';
+
 
 export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.rowDisplay}>
-        <Text>Special</Text>
+        <Text style={styles.txtHead}>Special</Text>
         <Pressable style={styles.customButton} onPress={() => alert('Specials Page!')}>
         <Text style={{color: '#DFCFAB'}}>See More</Text>
         </Pressable>
       </View>
       <View style={styles.rowDisplay}>
-        <img style={styles.previewImg} src="assets/images/special.jpg" alt="Food Image" />
-        <img style={styles.previewImg} src="./assets/images/special.jpg" alt="Food Image" />
-        <img style={styles.previewImg} src="../assets/images/special.jpg" alt="Food Image" />
+        <Image style={styles.previewImg} source={require('assets/images/special.jpg')} />
+        <Image style={styles.previewImg} source={require('assets/images/special.jpg')} />
+        <Image style={styles.previewImg} source={require('assets/images/special.jpg')} />
       </View>
       <View style={styles.rowDisplay}>
         <View style={styles.displayColumn}>
           <Text>Beverages</Text>
-          <img src="" alt="Menu Image" />
+          <Image source={require('assets/images/special.jpg')}  />
         </View>
         <View style={styles.displayColumn}>
           <Text>Starter Menu</Text>
-          <img src="" alt="Menu Image" />
+          <Image source={require('assets/images/special.jpg')}  />
         </View>
       </View>
       <View style={styles.rowDisplay}>
         <View>
           <Text>Main Menu</Text>
-          <img src="" alt="Menu Image" />
+          <Image source={require('assets/images/special.jpg')}  />
         </View>
         <View>
           <Text>Dessert</Text>
-          <img src="" alt="Menu Image" />
+          <Image source={require('assets/images/special.jpg')}  />
         </View>
       </View>
       <StatusBar style="auto" />
@@ -51,6 +52,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 15,
+  },
+
+  txtHead: {
+    fontSize: 33,
   },
 
   previewImg:{
